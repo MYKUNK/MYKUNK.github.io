@@ -537,10 +537,33 @@
     <div class="row-fluid">
       <div class="span12">
         <form id="contact-form" action="/M.asp" method="get" class="form-horizontal">
-          <input class="input-xxlarge span12" type="text" placeholder="输入您的姓名" name="name" id="name" required/>
-          <input class="input-xxlarge span12" type="email" placeholder="输入您的邮箱" name="mail" id="mail" required/>
-          <textarea rows="5" class="span12" placeholder="Message" name="nr" id="nr" required></textarea>
-          <button type="submit" class="big-grn-btn" style="float:right; display:block;'">提交</button>
+
+          
+          <!-- Gitalk 评论 start  -->
+{% if site.gitalk.enable %}
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+    <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+    // gitalk的主要参数
+        clientID: `ff97eadc13210cca50ea`,
+        clientSecret: `f5620ed797413b1622fe8666f0379b6885791ea2`,
+        repo: `mykunk Blog`,
+        owner: 'mykunk',
+        admin: ['mykunk'],
+        id: 'ff97eadc13210cca50ea',
+    
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk end -->
+
+          
           <div class="clear"></div>
         </form>
         <div class="copyright"><span class="pull-left">&copy; Website.Copyright 2023-2024 安全助手坤坤</span><span class="pull-right">Powered by 坤坤大王</span>
